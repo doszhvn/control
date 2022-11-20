@@ -24,7 +24,12 @@ static const Map<String,dynamic> kk = {
 };
 static const Map<String,dynamic> ru = {
   "email": "Электронная почта",
-  "asd": "ФЫв"
+  "emailwrite": "Введите электронную почту",
+  "password": "Пароль",
+  "passwordwrite": "Введите пароль",
+  "login": "Войти",
+  "dha": "У Вас нет аккаунта?",
+  "reg": "Зарегистрироваться"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "kk": kk, "ru": ru};
 }

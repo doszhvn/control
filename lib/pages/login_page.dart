@@ -1,10 +1,13 @@
 
-// ignore_for_file: prefer_const_constructors, dead_code
+// ignore_for_file: prefer_const_constructors, dead_code, unused_import
 
 import 'package:flutter/material.dart';
 import 'register_form_page.dart';
 import 'package:form_app/main.dart';
 import 'package:lottie/lottie.dart';
+import 'package:form_app/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:form_app/translations/codegen_loader.g.dart';
 
 class LogInPage extends StatefulWidget {
   const LogInPage({super.key});
@@ -77,7 +80,7 @@ class _LogInPageState extends State<LogInPage> {
               maxLength: 8,
               decoration: InputDecoration(
                 
-                labelText: 'Password *',
+                labelText: 'Password',
                 hintText: 'Enter the password',
                 suffixIcon: IconButton(
                   icon:
@@ -102,7 +105,7 @@ class _LogInPageState extends State<LogInPage> {
               
             ),
              ElevatedButton(
-                  child: Text('Log In',style: TextStyle(color:Colors.black) ,),
+                  child: Text((LocaleKeys.login.tr()),style: TextStyle(color:Colors.black) ,),
                   style: ElevatedButton.styleFrom(
                       primary: Colors.transparent,
                       fixedSize: Size(200, 40),
@@ -111,9 +114,9 @@ class _LogInPageState extends State<LogInPage> {
                   onPressed: () {Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context) => MainPage()));},),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-              children: [Text("Don't have account?", style: TextStyle(fontSize: 15)),
+              children: [Text((LocaleKeys.dha.tr()), style: TextStyle(fontSize: 15)),
               GestureDetector(
-              child:Text("  Register", style: TextStyle(color: Colors. blue, fontSize: 15),),
+              child:Text((LocaleKeys.reg.tr()), style: TextStyle(color: Colors. blue, fontSize: 15),),
               onTap:(){
                 Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context) => RegisterFormPage()));
               })]

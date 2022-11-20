@@ -2,6 +2,11 @@
 
 abstract class  LocaleKeys {
   static const email = 'email';
-  static const asd = 'asd';
+  static const emailwrite = 'emailwrite';
+  static const password = 'password';
+  static const passwordwrite = 'passwordwrite';
+  static const login = 'login';
+  static const dha = 'dha';
+  static const reg = 'reg';
 
 }

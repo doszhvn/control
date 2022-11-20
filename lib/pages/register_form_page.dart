@@ -2,11 +2,10 @@
 
 import 'dart:developer';
 
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:form_app/translations/locale_keys.g.dart';
-
+import 'package:easy_localization/easy_localization.dart';
 import '../model/user.dart';
 import 'package:form_app/pages/navigation_pages/profile.dart';
 import 'login_page.dart';
@@ -212,27 +211,6 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 textStyle: const TextStyle(color: Colors.white),
               ),
               child: Text(LocaleKeys.email.tr()),
-              //color: Colors.green,
-            ),
-            ElevatedButton(
-              onPressed: ()async{
-                await context.setLocale(Locale('kk'));
-              },
-              child: const Text('KZ'),
-              //color: Colors.green,
-            ),
-            ElevatedButton(
-              onPressed: ()async{
-                await context.setLocale(Locale('en'));
-              },
-              child: const Text('EN'),
-              //color: Colors.green,
-            ),
-            ElevatedButton(
-              onPressed: ()async{
-                await context.setLocale(Locale('ru'));
-              },
-              child: const Text('RU'),
               //color: Colors.green,
             ),
             Row(

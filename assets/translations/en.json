@@ -1,4 +1,9 @@
 {
     "email": "Email Address",
-    "asd": "asdasd"
+    "emailwrite": "Enter a Email Address",
+    "password": "Password",
+    "passwordwrite": "Enter the password",
+    "login": "Log In",
+    "dha": "Don't have account?",
+    "reg": "Register"
 }

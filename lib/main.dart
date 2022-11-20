@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, use_build_context_synchronously
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -38,20 +38,20 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: const LogInPage(),
+      home: const LocalPage(),
     );
   }
 }
-  User newUser = User();
+  
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
-
+  
   @override
   State<MainPage> createState() => _MainPageState();
 }
+  User newUser = User();
 
 class _MainPageState extends State<MainPage> {
-  
   int _currentIndex = 0;
   final ttabs = [
     HomePage(),
@@ -99,5 +99,49 @@ class _MainPageState extends State<MainPage> {
         )
       ],)
     )));
+  }
+}
+
+
+class LocalPage extends StatefulWidget {
+  const LocalPage({super.key});
+
+  @override
+  State<LocalPage> createState() => _LocalPageState();
+}
+
+class _LocalPageState extends State<LocalPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children:[
+        ElevatedButton(
+              onPressed: ()async{
+                await context.setLocale(Locale('kk'));
+                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context) => LogInPage()));
+              },
+              child: const Text('Қазақша'),
+              //color: Colors.green,
+            ),
+            ElevatedButton(
+              onPressed: ()async{
+                await context.setLocale(Locale('en'));
+                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context) => LogInPage()));
+              },
+              child: const Text('In english'),
+              //color: Colors.green,
+            ),
+            ElevatedButton(
+              onPressed: ()async{
+                await context.setLocale(Locale('ru'));
+                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context) => LogInPage()));
+              },
+              child: const Text('На русском'),
+              //color: Colors.green,
+            ),
+      ]),
+    );
   }
 }
